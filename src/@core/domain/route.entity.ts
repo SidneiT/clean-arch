@@ -1,4 +1,4 @@
-import crypto from 'crypto';
+import { randomUUID } from 'crypto';
 export type LatLng = { lat: number; lng: number };
 
 export type RouteProps = {
@@ -12,10 +12,21 @@ export class Route {
   public readonly id: string;
   public props: Required<RouteProps>;
 
-  constructor(props: RouteProps, id?: string) {
-    this.id = id || crypto.randomUUID();
+  private constructor(props: RouteProps, id?: string) {
+    if (!props) {
+      //@ts-expect-error used for ORM
+      this.props = {}
+      return;
+    }
+
+    this.id = id || randomUUID();
     this.props = { ...props, points: props.points || [] };
   }
+
+  static create(props: RouteProps, id?: string): Route {
+    return new Route(props);
+  }
+
 
   //methods
 
