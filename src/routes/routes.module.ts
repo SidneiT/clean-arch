@@ -10,6 +10,7 @@ import { ListAllRoutesUseCase } from '../@core/application/list-all-routes.use-c
 import { RouteRepositoryInterface } from '../@core/domain/route.repository';
 import { RoutesController } from './routes.controller';
 import { RoutesService } from './routes.service';
+import { RoutesGateway } from './routes.gateway';
 
 
 @Module({
@@ -36,7 +37,7 @@ import { RoutesService } from './routes.service';
         return new ListAllRoutesUseCase(routeRepository)
       },
       inject: [RouteTypeOrmRepository]
-    }
+    }, RoutesGateway
   ],
 })
 export class RoutesModule { }
