@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "23e121d8-bbba-457b-952c-2677a24f4b28",
+		"name": "CleanArchitecture",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17756653"
+	},
+	"item": [
+		{
+			"name": "Create Routes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Test contructor\",\r\n    \"startPosition\": {\r\n        \"lat\": 0,\r\n        \"lng\": 1\r\n    },\r\n    \"endPosition\": {\r\n        \"lat\": 2,\r\n        \"lng\": 3\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/routes",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Routes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/routes",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/routes",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"routes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
